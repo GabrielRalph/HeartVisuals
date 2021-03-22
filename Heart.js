@@ -113,7 +113,6 @@ class Heart extends SvgPlus{
     if (h > w) {
       h = h * 600 / w;
       viewBox = `-30 -${(h - 600)/2} 600 ${h}`;
-      alert(w + ', ' +h + ' = ' + viewBox)
     }else{
       w = w * 600 / h;
       viewBox = `${(w - 600)/2} -50 ${300 + w/2} 600`;
