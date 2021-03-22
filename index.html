@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>AR CMS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+  </body>
+  <script type = "module">
+    import {Heart} from './Heart.js'
+
+    let heart = new Heart();
+    document.body.appendChild(heart);
+    heart.start();
+
+
+    document.body.onclick = () => {
+      heart.playSong();
+      console.log('x');
+    }
+
+
+  </script>
+  <style>
+  body{
+    background: black;
+  }
+
+  svg{
+    /* background: grey; */
+    /* max-height: 100vh; */
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    stroke: red;
+    stroke-width: 2;
+    fill: none;
+  }
+  </style>
+</html>
