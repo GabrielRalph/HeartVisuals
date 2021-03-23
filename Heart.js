@@ -6,7 +6,6 @@ class Heart extends SvgPlus{
   constructor(){
     super('svg');
 
-    this.viewBoxSizer();
     this._bpm = 160/2;
     this.frames = HeartFrames;
     this.g = this.createChild('g');
@@ -16,6 +15,7 @@ class Heart extends SvgPlus{
       // fill: 'white',
       stroke: 'none'
     }
+    this.viewBoxSizer();
     this.text.innerHTML = "hello"
 
     this.bass_specs = [30, 140];
@@ -112,10 +112,11 @@ class Heart extends SvgPlus{
     let viewBox;
     if (h > w) {
       h = h * 600 / w;
-      viewBox = `-30 -${(h - 600)/2} 600 ${h}`;
+      viewBox = `-75 -${(h - 600)/2} 600 ${h}`;
     }else{
       w = w * 600 / h;
-      viewBox = `${(w - 600)/2} -50 ${300 + w/2} 600`;
+      console.log(w);
+      viewBox = `-${(w - 600)/2} -50 ${w} 600`;
     }
     this.props = {
       viewBox: viewBox
@@ -198,8 +199,11 @@ class Heart extends SvgPlus{
     }
 
     this.g.styles = {
-      transform: `scale(${this.sizeX/100})`,
-      'transform-origin': 'center'
+       'transform-origin': '60vw 50vh',
+       transform: `scale(${this.sizeX/100})`,
+    }
+    this.g.props = {
+      // 'transform-origin': 'center'
     }
 
   }
