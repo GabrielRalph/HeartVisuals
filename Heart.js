@@ -91,7 +91,7 @@ class Heart extends SvgPlus{
 
   playSong(){
     if (this.playing) return;
-    var audio = new Audio('Holy.mp3');
+    var audio = new Audio('miss.mp3');
     this.playing = true;
     this.handleStream(audio);
     audio.play();
@@ -156,6 +156,10 @@ class Heart extends SvgPlus{
       // this._runVSceneMethod('onBass', std)
     // }
     this.last_bass_dir = dir;
+  }
+
+  onBass(){
+
   }
 
   handleStream(stream){
